@@ -1,6 +1,6 @@
 .inner {
-  padding-top: calc(var(--mantine-spacing-xl) * 4);
-  padding-bottom: calc(var(--mantine-spacing-xl) * 4);
+  /* padding-top: calc(var(--mantine-spacing-xl) * 4); */
+  padding-bottom: calc(var(--mantine-spacing-xl) * 2);
 }
 
 .content {
