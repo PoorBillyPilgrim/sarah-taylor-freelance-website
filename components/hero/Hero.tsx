@@ -1,28 +1,62 @@
-import { Button, Container, Group, Image, Text, Title } from "@mantine/core";
+import {
+  Box,
+  Button,
+  Container,
+  Flex,
+  Group,
+  Image,
+  Text,
+  Title,
+} from "@mantine/core";
 import classes from "./Hero.module.css";
 
 export function Hero() {
-  console.log(classes);
   return (
-    <Container size="xl">
-      <div className={classes.inner}>
+    <Container component="section" size="xl" bg="green.9" pos="relative">
+      <Flex
+        px={{ base: 50, lg: 100 }}
+        className={classes.inner}
+        direction={{ base: "column", md: "row-reverse" }}
+        justify={{ base: "space-between" }}
+      >
+        <Image
+          src="/climbing.jpg"
+          className={classes.image}
+          radius="100%"
+          style={{ zIndex: 1 }}
+        />
+
         <div className={classes.content}>
-          <Title className={classes.title}>
-            Copywriter for adventurous brands
+          <Title className={classes.title} c="white">
+            Copywriter for <em>adventurous</em> brands
           </Title>
-          <Text c="dimmed" mt="md">
+          <Text c="white" mt="md">
             Get noticed and grow your business wth copy that converts, content
             that builds credibility, and strategy that scales
           </Text>
 
           <Group mt={30}>
-            <Button radius="xl" size="md" className={classes.control}>
+            <Button
+              color="orange.5"
+              radius="md"
+              size="md"
+              className={classes.control}
+            >
               Let's Go
             </Button>
           </Group>
         </div>
-        <Image src="/hero.svg" className={classes.image} />
-      </div>
+      </Flex>
+      <Box
+        visibleFrom="md"
+        w="100%"
+        bg="white"
+        h="200"
+        px="0"
+        pos="absolute"
+        bottom="0"
+        left="0"
+      />
     </Container>
   );
 }
