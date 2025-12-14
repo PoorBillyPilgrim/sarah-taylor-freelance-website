@@ -6,6 +6,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import {
   Box,
+  Button,
   Center,
   Container,
   Grid,
@@ -47,11 +48,11 @@ const Card = ({
   text: string;
 }) => {
   return (
-    <Grid gutter={{ base: "50" }}>
+    <Grid gutter={{ base: 60 }}>
       <Grid.Col span={{ base: 12, sm: "auto" }}>
         <Icon icon={icon} size="5x" />
       </Grid.Col>
-      <Grid.Col span={{ base: 12, sm: 9 }}>
+      <Grid.Col span={{ base: 12, sm: 10 }}>
         <Stack>
           <Title order={3} c="white">
             {title}
@@ -67,18 +68,24 @@ const Services = () => {
   return (
     <Box id="services" component="section" bg="green.9">
       <Container size="xl" px={{ base: 50, lg: 100 }} py={{ base: 50 }}>
-        <Title order={2} c="white">
+        <Title order={2} c="white" pb={{ base: 50 }}>
           Services
         </Title>
 
-        {cards.map(card => (
-          <Card
-            key={card.id}
-            icon={card.icon}
-            title={card.title}
-            text={card.text}
-          />
-        ))}
+        <Container size="md">
+          {cards.map(card => (
+            <Card
+              key={card.id}
+              icon={card.icon}
+              title={card.title}
+              text={card.text}
+            />
+          ))}
+        </Container>
+
+        <Center pt={{ base: 50 }}>
+          <Button>Get a custom quote</Button>
+        </Center>
       </Container>
     </Box>
   );

@@ -1,13 +1,12 @@
 import { Burger, Collapse, Container, Group, NavLink } from "@mantine/core";
 import NavLinks from "../components/NavLinks";
 import { useDisclosure } from "@mantine/hooks";
-import { HEADER_OFFSET } from "../app/page";
 
 const Header = () => {
   const [opened, handlers] = useDisclosure(false);
   return (
     <Container size="xl">
-      <Group mih={HEADER_OFFSET} justify="space-between">
+      <Group mih="var(--header-height)" justify="space-between">
         <div>Sarah M. Taylor</div>
         <Burger hiddenFrom="sm" opened={opened} onClick={handlers.toggle} />
         <NavLinks visibleFrom="sm" />

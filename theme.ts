@@ -1,14 +1,12 @@
 "use client";
 
-import { createTheme } from "@mantine/core";
+import { createTheme, CSSVariablesResolver } from "@mantine/core";
 
 export const theme = createTheme({
   /* Put your mantine theme override here */
   fontFamily: "Mont, sans-serif",
-  // primaryColor: "green",
-  // primaryShade: 9, // darkest shade, last in array
   primaryColor: "orange",
-  primaryShade: 5, // darkest shade, last in array; styles focus outline
+  primaryShade: 5, // styles focus outline
   colors: {
     green: [
       "#f4f8f2",
@@ -35,4 +33,17 @@ export const theme = createTheme({
       "#a53601",
     ],
   },
+
+  // custom CSS variable values
+  other: {
+    headerHeight: "100px",
+  },
+});
+
+export const resolver: CSSVariablesResolver = theme => ({
+  variables: {
+    "--header-height": theme.other.headerHeight,
+  },
+  light: {},
+  dark: {},
 });

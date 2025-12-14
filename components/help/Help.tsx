@@ -71,13 +71,15 @@ const Help = () => {
       pb={{ base: 50 }}
     >
       <Title order={2}>I can help you...</Title>
-      <Grid pt={{ base: 100 }} justify="space-between">
-        {cards.map(card => (
-          <Grid.Col key={card.id} span={{ base: 12, sm: 4, md: 3 }}>
-            <Card icon={card.icon} title={card.title} text={card.text} />
-          </Grid.Col>
-        ))}
-      </Grid>
+      <Container size="md">
+        <Grid pt={{ base: 100 }} justify="space-between">
+          {cards.map(card => (
+            <Grid.Col key={card.id} span={{ base: 12, sm: 4, md: 3 }}>
+              <Card icon={card.icon} title={card.title} text={card.text} />
+            </Grid.Col>
+          ))}
+        </Grid>
+      </Container>
     </Container>
   );
 };
