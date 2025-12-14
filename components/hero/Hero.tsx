@@ -25,12 +25,11 @@ export function Hero() {
             alt="Woman rock climbing"
             src="/climbing.jpg"
             className={classes.image}
-            radius="100%"
-            pt={{ base: 30 }}
+            mt={{ base: 50 }}
             style={{ zIndex: 1 }}
           />
 
-          <div className={classes.content}>
+          <Box className={classes.content} pt={{ base: 50, md: 0 }}>
             <Title className={classes.title} c="white">
               Copywriter for <em>adventurous</em> brands
             </Title>
@@ -51,7 +50,7 @@ export function Hero() {
                 Let&apos;s Go
               </Button>
             </Group>
-          </div>
+          </Box>
         </Flex>
       </Container>
       <Box

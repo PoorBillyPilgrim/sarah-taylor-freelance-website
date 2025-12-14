@@ -2,7 +2,6 @@
 import {
   Anchor,
   AppShell,
-  AppShellHeader,
   Burger,
   Collapse,
   Container,
@@ -24,11 +23,11 @@ const Header = () => {
           <Burger hiddenFrom="sm" opened={opened} onClick={handlers.toggle} />
           <NavLinks visibleFrom="sm" />
         </Group>
-        <Collapse in={opened} hiddenFrom="sm">
-          <NavLink label="About" href="#about" />
-          <NavLink label="Services" href="#services" />
-          <NavLink label="Work" href="#work" />
-          <NavLink label="Contact" href="#contact" />
+        <Collapse in={opened} hiddenFrom="sm" pb={{ base: 20 }}>
+          <NavLink label="About" href="/#about" />
+          <NavLink label="Services" href="/#services" />
+          <NavLink label="Work" href="/#work" />
+          <NavLink label="Contact" href="/contact" />
         </Collapse>
       </Container>
     </AppShell.Header>
