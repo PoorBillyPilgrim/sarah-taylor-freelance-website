@@ -84,7 +84,9 @@ const Services = () => {
         </Container>
 
         <Center pt={{ base: 50 }}>
-          <Button>Get a custom quote</Button>
+          <Button component="a" href="/contact">
+            Get a custom quote
+          </Button>
         </Center>
       </Container>
     </Box>

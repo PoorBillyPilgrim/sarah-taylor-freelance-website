@@ -1,10 +1,5 @@
-import {
-  ActionIcon,
-  AppShellFooter,
-  Container,
-  Group,
-  Text,
-} from "@mantine/core";
+"use client";
+import { AppShell, Container, Group, Text } from "@mantine/core";
 import classes from "./Footer.module.css";
 
 const data = [
@@ -32,7 +27,7 @@ const data = [
   },
 ];
 
-export function Footer() {
+const Footer = () => {
   const groups = data.map(group => {
     const links = group.links.map((link, index) => (
       <Text<"a">
@@ -41,7 +36,6 @@ export function Footer() {
         component="a"
         href={link.link}
         target={link?.target ?? "_self"}
-        // onClick={event => event.preventDefault()}
       >
         {link.label}
       </Text>
@@ -56,7 +50,11 @@ export function Footer() {
   });
 
   return (
-    <AppShellFooter className={classes.footer} px={{ base: 50, lg: 100 }}>
+    <AppShell.Footer
+      id="footer"
+      className={classes.footer}
+      px={{ base: 50, lg: 100 }}
+    >
       <Container className={classes.inner} size="xl">
         <div className={classes.logo}>
           <Text size="xs" className={classes.description}>
@@ -79,6 +77,8 @@ export function Footer() {
           Terms and Conditions
         </Group>
       </Container>
-    </AppShellFooter>
+    </AppShell.Footer>
   );
-}
+};
+
+export default Footer;

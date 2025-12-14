@@ -22,6 +22,7 @@ export function Hero() {
           align="center"
         >
           <Image
+            alt="Woman rock climbing"
             src="/climbing.jpg"
             className={classes.image}
             radius="100%"
@@ -44,8 +45,10 @@ export function Hero() {
                 radius="md"
                 size="md"
                 className={classes.control}
+                component="a"
+                href="/contact"
               >
-                Let's Go
+                Let&apos;s Go
               </Button>
             </Group>
           </div>

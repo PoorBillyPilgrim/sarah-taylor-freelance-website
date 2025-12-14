@@ -1,12 +1,14 @@
-import "@mantine/core/styles.css";
-import "./global.css";
 import React from "react";
+import "@mantine/core/styles.layer.css";
+import "./global.css";
+
 import {
-  MantineProvider,
   ColorSchemeScript,
   mantineHtmlProps,
+  MantineProvider,
 } from "@mantine/core";
 import { resolver, theme } from "../theme";
+import AppLayout from "../components/AppLayout";
 
 export const metadata = {
   title: "Sarah M. Taylor",
@@ -26,7 +28,7 @@ export default function RootLayout({ children }: { children: any }) {
       </head>
       <body>
         <MantineProvider theme={theme} cssVariablesResolver={resolver}>
-          {children}
+          <AppLayout>{children}</AppLayout>
         </MantineProvider>
       </body>
     </html>

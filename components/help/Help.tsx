@@ -68,6 +68,7 @@ const Help = () => {
       component="section"
       size="xl"
       px={{ base: 50, lg: 100 }}
+      pt={{ base: 50, md: 0 }}
       pb={{ base: 50 }}
     >
       <Title order={2}>I can help you...</Title>
