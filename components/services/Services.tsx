@@ -16,6 +16,7 @@ import {
   Title,
 } from "@mantine/core";
 import Icon from "../icon/Icon";
+import Section from "../section/Section";
 
 const cards = [
   {
@@ -66,30 +67,28 @@ const Card = ({
 
 const Services = () => {
   return (
-    <Box id="services" component="section" bg="green.9">
-      <Container size="xl" px={{ base: 50, lg: 100 }} py={{ base: 50 }}>
-        <Title order={2} c="white" pb={{ base: 50 }}>
-          Services
-        </Title>
+    <Section id="services" bg="green.9">
+      <Title order={2} c="white" pb={{ base: 50 }}>
+        Services
+      </Title>
 
-        <Container size="md">
-          {cards.map(card => (
-            <Card
-              key={card.id}
-              icon={card.icon}
-              title={card.title}
-              text={card.text}
-            />
-          ))}
-        </Container>
-
-        <Center pt={{ base: 50 }}>
-          <Button component="a" href="/contact">
-            Get a custom quote
-          </Button>
-        </Center>
+      <Container size="md">
+        {cards.map(card => (
+          <Card
+            key={card.id}
+            icon={card.icon}
+            title={card.title}
+            text={card.text}
+          />
+        ))}
       </Container>
-    </Box>
+
+      <Center pt={{ base: 50 }}>
+        <Button component="a" href="/contact">
+          Get a custom quote
+        </Button>
+      </Center>
+    </Section>
   );
 };
 

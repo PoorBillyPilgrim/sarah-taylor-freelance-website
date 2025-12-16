@@ -6,6 +6,7 @@ import Services from "../components/services/Services";
 import Quotes from "../components/quotes/Quotes";
 import { Fragment } from "react";
 import Projects from "../components/projects/Projects";
+import About from "../components/about/About";
 
 export default function HomePage() {
   return (
@@ -15,6 +16,7 @@ export default function HomePage() {
       <Services />
       <Quotes />
       <Projects />
+      <About />
     </Fragment>
   );
 }

@@ -55,7 +55,7 @@ const Footer = () => {
       className={classes.footer}
       px={{ base: 50, lg: 100 }}
     >
-      <Container className={classes.inner} size="xl">
+      <Container className={classes.inner}>
         <div className={classes.logo}>
           <Text size="xs" className={classes.description}>
             Sarah M. Taylor
@@ -63,7 +63,7 @@ const Footer = () => {
         </div>
         <div className={classes.groups}>{groups}</div>
       </Container>
-      <Container className={classes.afterFooter} size="xl">
+      <Container className={classes.afterFooter}>
         <Text size="sm">
           © {new Date().getFullYear()} Sarah M. Taylor. All rights reserved.
         </Text>

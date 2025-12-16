@@ -1,6 +1,6 @@
 "use client";
 
-import { createTheme, CSSVariablesResolver } from "@mantine/core";
+import { Container, createTheme, CSSVariablesResolver } from "@mantine/core";
 
 export const theme = createTheme({
   /* Put your mantine theme override here */
@@ -32,6 +32,14 @@ export const theme = createTheme({
       "#bd4208",
       "#a53601",
     ],
+  },
+
+  components: {
+    Container: Container.extend({
+      defaultProps: {
+        size: "xl",
+      },
+    }),
   },
 
   // custom CSS variable values

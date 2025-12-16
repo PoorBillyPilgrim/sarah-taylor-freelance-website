@@ -46,7 +46,7 @@ const projects = [
     text: "Georgia River Guide app launch announcement (X media hits)",
   },
   {
-    key: 6,
+    id: 6,
     src: "/climbing.jpg",
     alt: "Woman rock climbing",
     title: "Marketing Literature",
@@ -66,12 +66,12 @@ const Project = ({
   text: string;
 }) => {
   return (
-    <Stack justify="center" align="center">
+    <Stack align="center">
       <Box h={300} w={300} bd="solid 10px orange.5" bdrs="100%">
         <Image
           className={classes.image}
-          height="280"
-          width="280"
+          height="280px"
+          width="280px"
           radius="100%"
           src={src}
           alt={alt}
@@ -89,7 +89,7 @@ const Project = ({
 const Projects = () => {
   return (
     <Box id="work" component="section" bg="green.9">
-      <Container size="xl" px={{ base: 50, lg: 100 }} py={{ base: 50 }}>
+      <Container px={{ base: 50, lg: 100 }} py={{ base: 50 }}>
         <Title order={2} c="white" pb={{ base: 50 }}>
           Explore my latest project wins
         </Title>

@@ -9,13 +9,14 @@ import {
   NavLink,
 } from "@mantine/core";
 import NavLinks from "../components/NavLinks";
-import { useDisclosure } from "@mantine/hooks";
+import { useDisclosure, useFocusTrap } from "@mantine/hooks";
 
 const Header = () => {
   const [opened, handlers] = useDisclosure(false);
+  const focusTrapRef = useFocusTrap();
   return (
     <AppShell.Header withBorder px={{ base: 15, lg: 100 }}>
-      <Container size="xl">
+      <Container ref={focusTrapRef}>
         <Group mih="var(--header-height)" justify="space-between">
           <Anchor href="/" c="black">
             Sarah M. Taylor

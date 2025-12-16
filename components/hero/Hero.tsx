@@ -13,7 +13,7 @@ import classes from "./Hero.module.css";
 export function Hero() {
   return (
     <Box component="section" bg="green.9" pos="relative">
-      <Container size="xl">
+      <Container>
         <Flex
           px={{ base: 50, lg: 100 }}
           className={classes.inner}
