@@ -1,5 +1,5 @@
 "use client";
-import { Center, Container, Stack, Text, Title } from "@mantine/core";
+import { Stack, Text, Title } from "@mantine/core";
 import Section from "../components/section/Section";
 
 const NotFound = () => {

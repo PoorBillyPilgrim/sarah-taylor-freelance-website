@@ -9,11 +9,12 @@ import {
   NavLink,
 } from "@mantine/core";
 import NavLinks from "../components/NavLinks";
-import { useDisclosure, useFocusTrap } from "@mantine/hooks";
+import { useDisclosure, useFocusTrap, useMediaQuery } from "@mantine/hooks";
 
 const Header = () => {
+  const isSm = useMediaQuery("(max-width: 48em)");
   const [opened, handlers] = useDisclosure(false);
-  const focusTrapRef = useFocusTrap();
+  const focusTrapRef = useFocusTrap(isSm);
   return (
     <AppShell.Header withBorder px={{ base: 15, lg: 100 }}>
       <Container ref={focusTrapRef}>
