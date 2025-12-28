@@ -16,10 +16,14 @@ const Button = createPolymorphicComponent<"button", MantineButtonProps>(
         ref={ref}
         className={classes.button}
         fz="var(--mantine-font-size-lg)"
-        h="auto"
         size="md"
         radius="md"
         py={10}
+        styles={{
+          label: {
+            overflow: "visible",
+          },
+        }}
         {...props}
       >
         {props.children}
