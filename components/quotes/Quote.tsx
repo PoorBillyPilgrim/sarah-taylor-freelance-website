@@ -8,6 +8,7 @@ import {
   Text,
 } from "@mantine/core";
 import classes from "./Quote.module.css";
+import Icon from "../images/Icon";
 
 const Quote = ({
   avatar,
@@ -27,8 +28,9 @@ const Quote = ({
   const textColor = bg === "green.9" ? "white" : "black";
   return (
     <Box component="section" bg={bg}>
-      <Container size="sm">
-        <Center h="500">
+      <Container size="md">
+        <Icon src="/icons/top_quote.png" />
+        <Center>
           <Stack justify="center" align="center">
             <Text className={classes.quote} c={textColor}>
               {quote}
@@ -46,6 +48,8 @@ const Quote = ({
             </Group>
           </Stack>
         </Center>
+
+        <Icon ml="auto" src="/icons/bottom_quote.png" />
       </Container>
     </Box>
   );
