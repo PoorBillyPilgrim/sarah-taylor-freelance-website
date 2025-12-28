@@ -41,14 +41,11 @@
 .groups {
   display: flex;
   flex-wrap: wrap;
+  gap: 100px;
 
   @media (max-width: $mantine-breakpoint-sm) {
     display: none;
   }
-}
-
-.wrapper {
-  width: 160px;
 }
 
 .link {
@@ -66,7 +63,7 @@
 .title {
   font-size: var(--mantine-font-size-lg);
   font-weight: 500;
-  font-family: Outfit, var(--mantine-font-family);
+  font-family: "Mont-Heavy";
   margin-bottom: calc(var(--mantine-spacing-xs) / 2);
   color: white;
 }

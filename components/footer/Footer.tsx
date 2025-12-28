@@ -1,5 +1,5 @@
 "use client";
-import { AppShell, Container, Group, Text } from "@mantine/core";
+import { AppShell, Container, Text } from "@mantine/core";
 import classes from "./Footer.module.css";
 
 const data = [
@@ -68,14 +68,14 @@ const Footer = () => {
           © {new Date().getFullYear()} Sarah M. Taylor. All rights reserved.
         </Text>
 
-        <Group
+        {/* <Group
           gap={0}
           className={classes.social}
           justify="flex-end"
           wrap="nowrap"
         >
           Terms and Conditions
-        </Group>
+        </Group> */}
       </Container>
     </AppShell.Footer>
   );
