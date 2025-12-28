@@ -1,41 +1,26 @@
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import {
-  faClipboardCheck,
-  faDesktop,
-  faPencil,
-} from "@fortawesome/free-solid-svg-icons";
-import {
-  Box,
-  Button,
-  Center,
-  Container,
-  Grid,
-  Group,
-  Stack,
-  Text,
-  Title,
-} from "@mantine/core";
-import Icon from "../icon/Icon";
+import { Center, Container, Grid, Stack, Text, Title } from "@mantine/core";
 import Section from "../section/Section";
+import Icon from "../images/Icon";
+import Button from "../buttons/Button";
 
 const cards = [
   {
     id: 1,
-    icon: faDesktop,
+    icon: "/icons/copywriting.png",
     title: "Copywriting",
-    text: "Stand out and sell more with action-inspiring web copy, objection-busting email sequences, and expert-level marketing literature.",
+    text: "Get noticed and grow your bottom line with action-inspiring web copy, objection-busting email sequences, and expert-level marketing literature.",
   },
   {
     id: 2,
-    icon: faPencil,
+    icon: "/icons/content_writing.png",
     title: "Content Writing",
     text: "Build brand awareness and authority with SEO-friendly blog posts, attention-grabbing newsletters, and proof-packed case studies.",
   },
   {
     id: 3,
-    icon: faClipboardCheck,
+    icon: "/icons/content_strategy.png",
     title: "Content Strategy + Consulting",
-    text: "Ensure every piece of content is empowered by purpose and delivers the desired results.",
+    text: "Tired of wasting time and resources on content that doesn’t grow your business? Get the results you’re after with strategy custom fit to your brand and business goals.",
   },
 ];
 
@@ -44,16 +29,16 @@ const Card = ({
   title,
   text,
 }: {
-  icon: IconProp;
+  icon: string;
   title: string;
   text: string;
 }) => {
   return (
-    <Grid gutter={{ base: 60 }}>
-      <Grid.Col span={{ base: 12, sm: "auto" }}>
-        <Icon icon={icon} size="5x" />
+    <Grid h={{ base: "auto", sm: 175 }}>
+      <Grid.Col span={{ base: 12, sm: 2 }}>
+        <Icon variant="services" src={icon} />
       </Grid.Col>
-      <Grid.Col span={{ base: 12, sm: 10 }}>
+      <Grid.Col span={{ base: 12, sm: "auto" }}>
         <Stack>
           <Title order={3} c="white">
             {title}
@@ -68,7 +53,7 @@ const Card = ({
 const Services = () => {
   return (
     <Section id="services" bg="green.9">
-      <Title order={2} c="white" pb={{ base: 50 }}>
+      <Title order={2} c="white" pb={{ base: 40 }}>
         Services
       </Title>
 
@@ -83,7 +68,7 @@ const Services = () => {
         ))}
       </Container>
 
-      <Center pt={{ base: 50 }}>
+      <Center mt={50}>
         <Button component="a" href="/contact">
           Get a custom quote
         </Button>

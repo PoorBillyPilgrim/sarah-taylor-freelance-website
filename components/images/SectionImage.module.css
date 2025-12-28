@@ -1,0 +1,31 @@
+.image {
+  &[data-variant="md"] {
+    width: 250px;
+    height: 250px;
+
+    @media (min-width: $mantine-breakpoint-sm) {
+      width: 360px;
+      height: 360px;
+    }
+  }
+
+  &[data-variant="lg"] {
+    width: 250px;
+    height: 250px;
+
+    @media (min-width: $mantine-breakpoint-sm) {
+      width: 360px;
+      height: 360px;
+    }
+
+    @media (min-width: $mantine-breakpoint-md) {
+      height: 450px;
+      width: 450px;
+    }
+
+    @media (min-width: $mantine-breakpoint-lg) {
+      height: 600px;
+      width: 600px;
+    }
+  }
+}

@@ -1,70 +1,109 @@
+import { Fragment } from "react";
 import {
   Box,
-  Button,
-  Center,
   Container,
+  Flex,
   Grid,
   Image,
-  SimpleGrid,
   Stack,
   Text,
   Title,
 } from "@mantine/core";
+
 import Section from "../section/Section";
-import classes from "./About.module.css";
+import SectionImage from "../images/SectionImage";
+import Button from "../buttons/Button";
+import Icon from "../images/Icon";
 
 const About = () => {
   return (
-    <Section id="about" bg="white">
-      <Container size="md">
-        <Grid align="center">
-          <Grid.Col span={{ base: 12, md: 6 }}>
-            {/* <Center> */}
-            <Image
-              className={classes.image}
-              src="/grand-canyon.jpg"
-              alt="Woman fishing"
-              radius="100%"
-            />
-            {/* </Center> */}
-          </Grid.Col>
-          <Grid.Col span={{ base: 12, md: 6 }}>
-            <Stack align="flex-start">
-              <Title order={2}>About Me</Title>
-              <Text>This is all about me</Text>
-            </Stack>
-          </Grid.Col>
-        </Grid>
-        <Grid align="center">
-          <Grid.Col span={{ base: 12, md: 6 }}>
+    <Fragment>
+      <Section id="reel-em-in" bg="pink.1">
+        <Container>
+          <Flex
+            direction={{ base: "column", md: "row-reverse" }}
+            justify="space-between"
+            align="center"
+          >
+            <SectionImage alt="woman fishing" src="/images/cta.png" />
             <Stack>
-              <Title order={2} c="orange.5" fs="4rem">
-                Let's dive in
+              <Title c="orange.5" order={2}>
+                Let&apos;s reel &apos;em in
               </Title>
-              <Text>This is all about me</Text>
+              <Text>
+                Ready to catch new customers? I can help you hook their
+                attention and reel in the sale with the right content.
+              </Text>
               <Button
-                component="a"
-                href="mailto:hello@sarahmtaylor.com"
                 color="green.9"
-                w="fit-content"
+                w={{ base: "inherit", sm: "fit-content" }}
+                component="a"
+                href="/contact"
               >
-                Email me
+                Let&apos;s dive in
               </Button>
             </Stack>
-          </Grid.Col>
-          <Grid.Col span={{ base: 12, sm: 6 }}>
-            <Center>
-              <Image
-                className={classes.image}
-                src="/profile.jpg"
-                alt="Woman headshot"
-                radius="100%"
+          </Flex>
+        </Container>
+      </Section>
+
+      <Section id="about" bg="white">
+        <Container>
+          <Grid>
+            <Grid.Col span={{ base: "auto" }}>
+              <SectionImage
+                variant="md"
+                src="/images/about.png"
+                alt="Sarah Taylor"
               />
-            </Center>
-          </Grid.Col>
-        </Grid>
-      </Container>
-    </Section>
+              <Image
+                visibleFrom="md"
+                h={100}
+                w={100}
+                style={{ alignSelf: "flex-end" }}
+                src="/icons/squiggly_arrow.png"
+                alt=""
+              />
+            </Grid.Col>
+
+            <Grid.Col span={{ base: 12, md: 6, lg: 4 }}>
+              <Stack>
+                <Box>
+                  <Title order={2} lh="1">
+                    More about me
+                  </Title>
+                  <Icon variant="about" src="/icons/underline.png" />
+                </Box>
+
+                <Text>
+                  I can help guide your customers through the sales funnel with
+                  useful, artistic, and empathetic content. With close to a
+                  decade of marketing experience, I’ve held titles like Director
+                  of Communications and Senior Content Writer for brands with
+                  big missions in industries like climate tech, nonprofit, and
+                  education.
+                </Text>
+
+                <Text>
+                  I pride myself on my professionalism, personalization, and
+                  perfectionist standards that ensure I consistently deliver
+                  excellence for my clients. If you’re ready to reclaim some
+                  time and see bigger marketing results, I’d love to take some
+                  tasks off your plate.
+                </Text>
+                <Button
+                  component="a"
+                  href="mailto:hello@sarahmtaylor.com"
+                  w={{ base: "inherit", sm: "fit-content" }}
+                >
+                  Let&apos;s chat
+                </Button>
+              </Stack>
+            </Grid.Col>
+          </Grid>
+        </Container>
+      </Section>
+    </Fragment>
   );
 };
 

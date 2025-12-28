@@ -6,51 +6,60 @@ import {
   Stack,
   Text,
   Title,
+  UnstyledButton,
 } from "@mantine/core";
 import classes from "./Projects.module.css";
+import Link from "next/link";
 
 const projects = [
   {
     id: 1,
-    src: "/climbing.jpg",
-    alt: "Woman rock climbing",
+    src: "/images/website_copy.png",
+    href: "https://solar.solterra.com/backup-battery/",
+    target: "_blank",
+    alt: "laptop displaying a website",
     title: "Website Copy",
     text: "Service page for Solterra Solar",
   },
   {
     id: 2,
-    src: "/climbing.jpg",
-    alt: "Woman rock climbing",
-    title: "Blob",
+    src: "/images/blog.png",
+    href: "https://sunpathelectric.com/blogs/sun-path/celebrating-temple-beth-hatfiloh-s-solar-story",
+    alt: "A blog post",
+    title: "Blog",
     text: "Case study-style content for Sun Path Electric",
   },
   {
     id: 3,
-    src: "/climbing.jpg",
-    alt: "Woman rock climbing",
-    title: "UX Copy",
-    text: "Onboarding slide + in-app content for Georgia River Guide",
+    src: "/images/marketing_lit.png",
+    href: "",
+    alt: "brochures arranged in a fan",
+    title: "Marketing Literature",
+    text: "Summer J Camp Brochure for Stroum Jewish Community Center",
   },
   {
     id: 4,
-    src: "/climbing.jpg",
-    alt: "Woman rock climbing",
+    src: "/images/article.png",
+    href: "",
+    alt: "screenshot of an article",
     title: "Article",
     text: "St. Martin's Episcopal School Magazine",
   },
   {
     id: 5,
-    src: "/climbing.jpg",
-    alt: "Woman rock climbing",
+    src: "/images/presser.png",
+    href: "",
+    alt: "laptop displaying an article",
     title: "Press Release",
     text: "Georgia River Guide app launch announcement (X media hits)",
   },
   {
     id: 6,
-    src: "/climbing.jpg",
-    alt: "Woman rock climbing",
-    title: "Marketing Literature",
-    text: "Summer J Camp Brochure for Stroum Jewish Community Center",
+    src: "/images/ux_copy.png",
+    href: "",
+    alt: "a cell phone displaying an app",
+    title: "UX Copy",
+    text: "Onboarding slide + in-app content for Georgia River Guide",
   },
 ];
 
@@ -59,30 +68,33 @@ const Project = ({
   alt,
   title,
   text,
+  href,
+  target,
 }: {
   src: string;
   alt: string;
   title: string;
   text: string;
+  href: string;
+  target?: string;
 }) => {
   return (
-    <Stack align="center">
-      <Box h={300} w={300} bd="solid 10px orange.5" bdrs="100%">
+    <UnstyledButton component={Link} href={href} target={target ?? "_self"}>
+      <Stack align="center">
         <Image
           className={classes.image}
           height="280px"
           width="280px"
-          radius="100%"
           src={src}
           alt={alt}
         />
-      </Box>
 
-      <Title order={3} c="orange.5">
-        {title}
-      </Title>
-      <Text c="white">{text}</Text>
-    </Stack>
+        <Title order={3} c="orange.5">
+          {title}
+        </Title>
+        <Text c="white">{text}</Text>
+      </Stack>
+    </UnstyledButton>
   );
 };
 

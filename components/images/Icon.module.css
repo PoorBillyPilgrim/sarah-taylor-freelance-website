@@ -1,0 +1,14 @@
+.icon {
+  &[data-variant="help"] {
+    width: 150px;
+    height: 150px;
+  }
+
+  &[data-variant="services"] {
+    width: 100px;
+  }
+
+  &[data-variant="about"] {
+    width: "inherit";
+  }
+}

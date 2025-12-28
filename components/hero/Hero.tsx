@@ -1,14 +1,8 @@
-import {
-  Box,
-  Button,
-  Container,
-  Flex,
-  Group,
-  Image,
-  Text,
-  Title,
-} from "@mantine/core";
+import { Box, Container, Flex, Group, Text, Title } from "@mantine/core";
 import classes from "./Hero.module.css";
+
+import Button from "../buttons/Button";
+import SectionImage from "../images/SectionImage";
 
 export function Hero() {
   return (
@@ -21,10 +15,9 @@ export function Hero() {
           justify={{ base: "space-between" }}
           align="center"
         >
-          <Image
+          <SectionImage
             alt="Woman rock climbing"
-            src="/climbing.jpg"
-            className={classes.image}
+            src="/images/hero.png"
             mt={{ base: 50 }}
             style={{ zIndex: 1 }}
           />
@@ -34,8 +27,8 @@ export function Hero() {
               Copywriter for <em>adventurous</em> brands
             </Title>
             <Text c="white" mt="md">
-              Get noticed and grow your business wth copy that converts, content
-              that builds credibility, and strategy that scales
+              Get noticed and grow your business wth action-igniting copy,
+              cred-building content, and scale-ready strategy.
             </Text>
 
             <Group mt={30}>
@@ -43,7 +36,6 @@ export function Hero() {
                 color="orange.5"
                 radius="md"
                 size="md"
-                className={classes.control}
                 component="a"
                 href="/contact"
               >

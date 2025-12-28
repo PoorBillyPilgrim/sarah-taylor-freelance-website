@@ -1,0 +1,5 @@
+.button {
+  @media (max-width: $mantine-breakpoint-xs) {
+    flex: 1;
+  }
+}
