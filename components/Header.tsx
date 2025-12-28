@@ -15,6 +15,11 @@ const Header = () => {
   const isSm = useMediaQuery("(max-width: 48em)");
   const [opened, handlers] = useDisclosure(false);
   const focusTrapRef = useFocusTrap(isSm);
+
+  const handleClick = () => {
+    handlers.close();
+  };
+
   return (
     <AppShell.Header withBorder px={{ base: 15, lg: 100 }}>
       <Container ref={focusTrapRef}>
@@ -26,10 +31,10 @@ const Header = () => {
           <NavLinks visibleFrom="sm" />
         </Group>
         <Collapse in={opened} hiddenFrom="sm" pb={{ base: 20 }}>
-          <NavLink label="About" href="/#about" />
-          <NavLink label="Services" href="/#services" />
-          <NavLink label="Work" href="/#work" />
-          <NavLink label="Contact" href="/contact" />
+          <NavLink onClick={handleClick} label="About" href="/#about" />
+          <NavLink onClick={handleClick} label="Services" href="/#services" />
+          <NavLink onClick={handleClick} label="Work" href="/#work" />
+          <NavLink onClick={handleClick} label="Contact" href="/contact" />
         </Collapse>
       </Container>
     </AppShell.Header>
