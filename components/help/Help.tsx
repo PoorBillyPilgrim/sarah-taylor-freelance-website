@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Stack, Text, Title } from "@mantine/core";
+import { Container, Grid, Stack, Text, Title } from "@mantine/core";
 import { ReactNode } from "react";
 import Icon from "../images/Icon";
 
@@ -49,9 +49,7 @@ const Card = ({
 }) => {
   return (
     <Stack gap="md">
-      <Box h={150} w={150}>
-        <Icon variant="help" src={icon} />
-      </Box>
+      <Icon variant="help" src={icon} />
       <Title order={3}>{title}</Title>
       {text}
     </Stack>

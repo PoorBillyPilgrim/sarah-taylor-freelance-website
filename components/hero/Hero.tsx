@@ -39,7 +39,7 @@ export function Hero() {
                 component="a"
                 href="/contact"
               >
-                Let&apos;s Go
+                Let&apos;s go
               </Button>
             </Group>
           </Box>

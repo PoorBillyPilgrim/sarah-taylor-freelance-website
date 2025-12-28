@@ -1,13 +1,21 @@
-import { Image } from "@mantine/core";
+import { Image, ImageProps } from "@mantine/core";
 import classes from "./Icon.module.css";
 
-type Icon = {
-  variant: "about" | "help" | "services";
+interface IconProps extends ImageProps {
+  variant?: "default" | "about" | "help" | "services";
   src: string;
-};
+}
 
-const Icon = ({ src, variant }: Icon) => {
-  return <Image variant={variant} className={classes.icon} src={src} alt="" />;
+const Icon = ({ src, variant = "default", ...other }: IconProps) => {
+  return (
+    <Image
+      variant={variant}
+      className={classes.icon}
+      src={src}
+      alt=""
+      {...other}
+    />
+  );
 };
 
 export default Icon;
