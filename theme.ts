@@ -1,10 +1,25 @@
 "use client";
 
-import { Container, createTheme, CSSVariablesResolver } from "@mantine/core";
+import {
+  Container,
+  createTheme,
+  CSSVariablesResolver,
+  Text,
+} from "@mantine/core";
 
 export const theme = createTheme({
-  /* Put your mantine theme override here */
-  fontFamily: "Mont, sans-serif",
+  /* TYPOGRAPHY */
+  fontFamily: "Mont-Light",
+  headings: {
+    fontFamily: "Mont-Heavy",
+    sizes: {
+      h2: {
+        fontSize: "2.5rem",
+      },
+    },
+  },
+
+  /** COLORS */
   primaryColor: "orange",
   primaryShade: 5, // styles focus outline
   colors: {
@@ -32,12 +47,34 @@ export const theme = createTheme({
       "#bd4208",
       "#a53601",
     ],
+    pink: [
+      "#fff1e7",
+      "#fdd8c4", // primary [1]
+      "#fac0a1",
+      "#f89d6d",
+      "#f68041",
+      "#f56d25",
+      "#f56417",
+      "#da530c",
+      "#c34907",
+      "#aa3c00",
+    ],
   },
 
+  /** COMPONENTS */
   components: {
     Container: Container.extend({
       defaultProps: {
         size: "xl",
+      },
+    }),
+
+    Text: Text.extend({
+      styles: {
+        root: {
+          fontSize: "1.2rem",
+          fontWeight: 600,
+        },
       },
     }),
   },
