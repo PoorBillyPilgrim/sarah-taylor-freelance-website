@@ -49,8 +49,8 @@ const About = () => {
 
       <Section id="about" bg="white">
         <Container>
-          <Grid>
-            <Grid.Col span={{ base: "auto" }}>
+          <Grid justify="center">
+            <Grid.Col pos="relative" span={{ base: "auto" }}>
               <SectionImage
                 variant="md"
                 src="/images/about.png"
@@ -58,21 +58,23 @@ const About = () => {
               />
               <Image
                 visibleFrom="md"
-                h={100}
-                w={100}
-                style={{ alignSelf: "flex-end" }}
+                h={200}
+                w={200}
+                pos="absolute"
+                bottom={20}
+                right={0}
                 src="/icons/squiggly_arrow.png"
                 alt=""
               />
             </Grid.Col>
 
-            <Grid.Col span={{ base: 12, md: 6, lg: 4 }}>
+            <Grid.Col span={{ base: 12, md: 6 }}>
               <Stack>
                 <Box>
                   <Title order={2} lh="1">
                     More about me
                   </Title>
-                  <Icon variant="about" src="/icons/underline.png" />
+                  <Icon variant="about" src="/icons/underline.png" w={320} />
                 </Box>
 
                 <Text>
