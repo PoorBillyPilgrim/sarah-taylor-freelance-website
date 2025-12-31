@@ -17,21 +17,27 @@ export default function Contact() {
       email: "",
       subject: "",
       message: "",
+      company: "", // honeypot
     },
     validate: {
-      name: value => value.trim().length < 2,
-      email: value => !/^\S+@\S+$/.test(value),
+      name: value => (value.trim().length < 2 ? "Please provide a name" : null),
+      email: value =>
+        !/^\S+@\S+$/.test(value) ? "Please provide a valid email" : null,
       subject: value => value.trim().length === 0,
     },
   });
 
   return (
     <Container size="sm" pt={{ base: 50 }}>
-      <form onSubmit={form.onSubmit(() => {})}>
+      <form
+        onSubmit={form.onSubmit(values => {
+          console.log(values);
+        })}
+      >
         <Title
           order={2}
           size="h1"
-          style={{ fontFamily: "Outfit, var(--mantine-font-family)" }}
+          style={{ fontFamily: "var(--mantine-font-family)" }}
           fw={900}
           ta="center"
         >
@@ -73,6 +79,17 @@ export default function Contact() {
           name="message"
           variant="filled"
           {...form.getInputProps("message")}
+        />
+
+        {/**
+         * honeypot
+         */}
+        <TextInput
+          name="company"
+          tabIndex={-1}
+          autoComplete="off"
+          style={{ display: "none" }}
+          {...form.getInputProps("company")}
         />
 
         <Group justify="center" mt="xl">

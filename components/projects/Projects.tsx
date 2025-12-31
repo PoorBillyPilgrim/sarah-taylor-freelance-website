@@ -32,7 +32,7 @@ const projects = [
   {
     id: 3,
     src: "/images/marketing_lit.png",
-    href: "",
+    href: "/marketing-literature.pdf",
     alt: "brochures arranged in a fan",
     title: "Marketing Literature",
     text: "Summer J Camp Brochure for Stroum Jewish Community Center",
@@ -40,7 +40,7 @@ const projects = [
   {
     id: 4,
     src: "/images/article.png",
-    href: "",
+    href: "https://issuu.com/st.martinsepiscopalschool/docs/smes_patterns_summer_2021/37",
     alt: "screenshot of an article",
     title: "Article",
     text: "St. Martin's Episcopal School Magazine",
@@ -48,7 +48,7 @@ const projects = [
   {
     id: 5,
     src: "/images/presser.png",
-    href: "",
+    href: "/press-release.pdf",
     alt: "laptop displaying an article",
     title: "Press Release",
     text: "Georgia River Guide app launch announcement (X media hits)",
@@ -56,7 +56,7 @@ const projects = [
   {
     id: 6,
     src: "/images/ux_copy.png",
-    href: "",
+    href: "/ux-copy.pdf",
     alt: "a cell phone displaying an app",
     title: "UX Copy",
     text: "Onboarding slide + in-app content for Georgia River Guide",
