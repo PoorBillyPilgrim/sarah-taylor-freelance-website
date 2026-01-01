@@ -24,11 +24,11 @@ const Link = createPolymorphicComponent<"a", LinkProps>(
 const NavLinks = (props: GroupProps) => {
   return (
     <Group {...props}>
-      <Link href="/#services">SERVICES</Link>
-      <Link href="/#work">WORK</Link>
-      <Link href="/#about">ABOUT</Link>
+      <Link href="/#services">Services</Link>
+      <Link href="/#work">Work</Link>
+      <Link href="/#about">About</Link>
       <Link href="/contact">
-        <strong>CONTACT</strong>
+        <strong>Contact</strong>
       </Link>
     </Group>
   );

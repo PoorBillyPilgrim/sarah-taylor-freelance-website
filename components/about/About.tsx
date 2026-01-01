@@ -25,7 +25,11 @@ const About = () => {
             justify="space-between"
             align="center"
           >
-            <SectionImage alt="woman fishing" src="/images/cta.png" />
+            <SectionImage
+              alt="woman fishing"
+              src="/images/cta.png"
+              mb={{ base: 25, md: 0 }}
+            />
             <Stack>
               <Title c="orange.5" order={2}>
                 Let&apos;s reel &apos;em in
@@ -74,7 +78,11 @@ const About = () => {
                   <Title order={2} lh="1">
                     More about me
                   </Title>
-                  <Icon variant="about" src="/icons/underline.png" w={320} />
+                  <Icon
+                    variant="about"
+                    src="/icons/underline.png"
+                    w={{ base: 250, sm: 320 }}
+                  />
                 </Box>
 
                 <Text>
