@@ -3,7 +3,7 @@ import Quote from "./Quote";
 const quotes = [
   {
     id: 1,
-    avatar: undefined,
+    avatar: "/images/about.png",
     alt: "",
     bg: "white",
     quote: '"My website improved so much after Sarah worked her magic"',
@@ -12,7 +12,7 @@ const quotes = [
   },
   {
     id: 2,
-    avatar: undefined,
+    avatar: "/images/about.png",
     alt: "",
     bg: "green.9",
     quote: '"My website improved so much after Sarah worked her magic"',
@@ -21,7 +21,7 @@ const quotes = [
   },
   {
     id: 3,
-    avatar: undefined,
+    avatar: "/images/about.png",
     alt: "",
     bg: "white",
     quote: '"My website improved so much after Sarah worked her magic"',
