@@ -12,11 +12,6 @@ export const theme = createTheme({
   fontFamily: "Mont-Light",
   headings: {
     fontFamily: "Mont-Heavy",
-    sizes: {
-      h2: {
-        fontSize: "2.5rem",
-      },
-    },
   },
 
   /** COLORS */
