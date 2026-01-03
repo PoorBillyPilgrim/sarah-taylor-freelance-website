@@ -1,5 +1,6 @@
 import React from "react";
 import "@mantine/core/styles.layer.css";
+import "@mantine/notifications/styles.layer.css";
 import "./global.css";
 
 import {
@@ -9,6 +10,7 @@ import {
 } from "@mantine/core";
 import { resolver, theme } from "../theme";
 import AppLayout from "../components/AppLayout";
+import { Notifications } from "@mantine/notifications";
 
 export const metadata = {
   title: "Sarah M. Taylor",
@@ -28,6 +30,7 @@ export default function RootLayout({ children }: { children: any }) {
       </head>
       <body>
         <MantineProvider theme={theme} cssVariablesResolver={resolver}>
+          <Notifications autoClose={5000} />
           <AppLayout>{children}</AppLayout>
         </MantineProvider>
       </body>

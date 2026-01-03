@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import {
   Button,
   Container,
@@ -9,6 +10,10 @@ import {
   Title,
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
+import { notifications } from "@mantine/notifications";
+
+const LAMBDA_URL =
+  "https://twi5bhfyoxlfbaqpgfi5zbwnza0fiuel.lambda-url.us-east-1.on.aws/";
 
 export default function Contact() {
   const form = useForm({
@@ -21,17 +26,42 @@ export default function Contact() {
     },
     validate: {
       name: value => (value.trim().length < 2 ? "Please provide a name" : null),
+      // super basic email validation; just looking for non-white space values with "@" in the middle
       email: value =>
         !/^\S+@\S+$/.test(value) ? "Please provide a valid email" : null,
-      subject: value => value.trim().length === 0,
+      subject: value =>
+        value.trim().length === 0 ? "Please provide a subject line" : null,
+      message: value =>
+        value.trim().length === 0 ? "Message must not be blank" : null,
     },
   });
+
+  const [loading, setLoading] = useState(false);
 
   return (
     <Container size="sm" pt={{ base: 50 }}>
       <form
-        onSubmit={form.onSubmit(values => {
-          console.log(values);
+        onSubmit={form.onSubmit(async values => {
+          setLoading(true);
+          try {
+            await fetch(LAMBDA_URL, {
+              method: "POST",
+              body: JSON.stringify(values),
+              headers: {
+                "Content-Type": "application/json",
+              },
+            });
+
+            notifications.show({
+              title: "Thanks for your message!",
+              message: "I'll respond to your inquiry as soon as possible",
+              position: "top-center",
+            });
+          } catch (err) {
+            console.log("ERROR SENDING EMAIL: ", err);
+          } finally {
+            setLoading(false);
+          }
         })}
       >
         <Title
@@ -93,7 +123,7 @@ export default function Contact() {
         />
 
         <Group justify="center" mt="xl">
-          <Button type="submit" size="md">
+          <Button type="submit" size="md" loading={loading}>
             Send message
           </Button>
         </Group>
