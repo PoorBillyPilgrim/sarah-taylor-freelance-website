@@ -1,5 +1,7 @@
 const siteEnv = process.env.SITE_ENV;
 
+console.log("SITE ENV: ", siteEnv);
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export", // enables static page generation, needed for deployment through GitHub Pages
