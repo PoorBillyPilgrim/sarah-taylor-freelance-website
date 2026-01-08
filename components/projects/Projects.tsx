@@ -85,7 +85,7 @@ const Project = ({
           className={classes.image}
           height="280px"
           width="280px"
-          src={`${process.env.PUBLIC_PATH}${src}`}
+          src={src}
           alt={alt}
         />
 

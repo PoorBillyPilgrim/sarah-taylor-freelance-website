@@ -11,7 +11,7 @@ const Icon = ({ src, variant = "default", ...other }: IconProps) => {
     <Image
       variant={variant}
       className={classes.icon}
-      src={`${process.env.PUBLIC_PATH}${src}`}
+      src={src}
       alt=""
       {...other}
     />
