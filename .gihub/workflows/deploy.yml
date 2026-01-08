@@ -1,0 +1,76 @@
+name: Deploy Next.js site
+
+on:
+  push:
+    branches:
+      - master
+      - staging
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        include:
+          - branch: staging
+            environment: staging
+          - branch: master
+            environment: prod
+
+    # Only run if the push matches the matrix branch
+    if: github.ref_name == matrix.branch
+    environment: ${{ matrix.environment }}
+
+    steps:
+      # 1. Checkout the repo
+      - uses: actions/checkout@v4
+
+      # 2. Install node and yarn
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "yarn"
+
+      # 3. Restore Next.js build cache
+      - name: Restore Next.js cache
+        uses: actions/cache@v4
+        with:
+          path: .next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+
+      # 4. Install dependencies
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      # 5. Assert SITE_ENV is set
+      - name: Assert SITE_ENV
+        run: |
+          if [ -z "$SITE_ENV" ]; then
+            echo "SITE_ENV is not set. Aborting."
+            exit 1
+          fi
+
+      # 6. Build Next.js site (output: 'export' in next.config.mjs)
+      - name: Build Next.js site
+        env:
+          SITE_ENV: ${{ vars.SITE_ENV }}
+        run: npm run build
+
+      # 7. Upload the built static site
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+      # 8. Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
