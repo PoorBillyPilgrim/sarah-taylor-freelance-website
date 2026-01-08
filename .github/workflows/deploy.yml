@@ -60,6 +60,7 @@ jobs:
         env:
           PAGES_BASE_PATH: ${{ steps.setup_pages.outputs.base_path }}
           SITE_ENV: staging
+          PUBLIC_PATH: /sarah-taylor-freelance-website/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

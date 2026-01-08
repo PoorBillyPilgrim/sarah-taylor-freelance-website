@@ -67,7 +67,7 @@ const About = () => {
                 pos="absolute"
                 bottom={20}
                 right={0}
-                src="/icons/squiggly_arrow.png"
+                src={`${process.env.PUBLIC_PATH}icons/squiggly_arrow.png`}
                 alt=""
               />
             </Grid.Col>

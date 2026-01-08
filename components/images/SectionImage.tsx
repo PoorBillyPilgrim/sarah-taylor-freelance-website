@@ -19,7 +19,7 @@ const SectionImage = ({
       variant={variant}
       className={classes.image}
       alt={alt}
-      src={src}
+      src={`${process.env.PUBLIC_PATH}${src}`}
       {...otherProps}
     />
   );
