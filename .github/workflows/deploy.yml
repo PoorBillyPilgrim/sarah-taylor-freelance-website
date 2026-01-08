@@ -1,12 +1,10 @@
-name: Deploy Next.js site
+name: Deploy Next.js site (staging)
 
 on:
   push:
     branches:
-      - master
       - staging
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
@@ -16,61 +14,35 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        include:
-          - branch: staging
-            environment: staging
-          - branch: master
-            environment: prod
+    environment: staging
 
-    # Only run if the push matches the matrix branch
-    if: github.ref_name == matrix.branch
-    environment: ${{ matrix.environment }}
+    env:
+      SITE_ENV: staging
 
     steps:
-      # 1. Checkout the repo
+      # 1. Checkout
       - uses: actions/checkout@v4
 
-      # 2. Install node and yarn
+      # 2. Node + Yarn
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: "yarn"
+          cache: yarn
 
-      # 3. Restore Next.js build cache
-      - name: Restore Next.js cache
-        uses: actions/cache@v4
-        with:
-          path: .next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-          restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
-
-      # 4. Install dependencies
+      # 3. Install dependencies
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      # 5. Assert SITE_ENV is set
-      - name: Assert SITE_ENV
-        run: |
-          if [ -z "$SITE_ENV" ]; then
-            echo "SITE_ENV is not set. Aborting."
-            exit 1
-          fi
-
-      # 6. Build Next.js site (output: 'export' in next.config.mjs)
+      # 4. Build static site
       - name: Build Next.js site
-        env:
-          SITE_ENV: ${{ vars.SITE_ENV }}
-        run: npm run build
+        run: yarn build
 
-      # 7. Upload the built static site
+      # 5. Upload Pages artifact
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: out
 
-      # 8. Deploy to GitHub Pages
+      # 6. Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
