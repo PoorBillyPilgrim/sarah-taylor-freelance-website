@@ -21,9 +21,6 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
-env:
-  SITE_ENV: staging
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -57,6 +54,10 @@ jobs:
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+
+      - name: Create .env
+        run: |
+          echo "SITE_ENV=staging" >> .env
 
       - name: Build with Next.js
         run: npm run build
