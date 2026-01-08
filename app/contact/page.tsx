@@ -57,8 +57,13 @@ export default function Contact() {
               message: "I'll respond to your inquiry as soon as possible",
               position: "top-center",
             });
-          } catch (err) {
-            console.log("ERROR SENDING EMAIL: ", err);
+          } catch (_err) {
+            notifications.show({
+              title: "Sorry, an error has occurred",
+              message: "Please try resending your message",
+              position: "top-center",
+              color: "red",
+            });
           } finally {
             setLoading(false);
           }
