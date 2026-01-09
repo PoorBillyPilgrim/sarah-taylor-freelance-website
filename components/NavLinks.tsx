@@ -13,10 +13,13 @@ interface LinkProps extends Omit<AnchorProps, "href"> {
   children?: React.ReactNode;
 }
 
-const Link = createPolymorphicComponent<"a", LinkProps>(
-  forwardRef<HTMLAnchorElement, LinkProps>(function Link(props, ref) {
+export const Link = createPolymorphicComponent<"a", LinkProps>(
+  forwardRef<HTMLAnchorElement, LinkProps>(function Link(
+    { c = "black", ...props },
+    ref
+  ) {
     return (
-      <Anchor component={NextLink} c="black" {...props} ref={ref}>
+      <Anchor component={NextLink} c={c} {...props} ref={ref}>
         {props.children}
       </Anchor>
     );

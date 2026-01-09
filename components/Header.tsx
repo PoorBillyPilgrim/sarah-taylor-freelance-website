@@ -1,6 +1,5 @@
 "use client";
 import {
-  Anchor,
   AppShell,
   Burger,
   Collapse,
@@ -8,7 +7,7 @@ import {
   Group,
   NavLink,
 } from "@mantine/core";
-import NavLinks from "../components/NavLinks";
+import NavLinks, { Link } from "../components/NavLinks";
 import { useDisclosure, useFocusTrap, useMediaQuery } from "@mantine/hooks";
 
 const Header = () => {
@@ -24,9 +23,7 @@ const Header = () => {
     <AppShell.Header withBorder px={{ base: 15, lg: 100 }}>
       <Container ref={focusTrapRef}>
         <Group mih="var(--header-height)" justify="space-between">
-          <Anchor href="/" c="black">
-            Sarah M. Taylor
-          </Anchor>
+          <Link href="/">Sarah M. Taylor</Link>
           <Burger hiddenFrom="sm" opened={opened} onClick={handlers.toggle} />
           <NavLinks visibleFrom="sm" />
         </Group>
