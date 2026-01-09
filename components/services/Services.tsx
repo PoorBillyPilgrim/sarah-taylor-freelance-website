@@ -50,6 +50,11 @@ const Card = ({
   );
 };
 
+const basePath: string =
+  process.env.NEXT_PUBLIC_SITE_ENV === "staging"
+    ? "/sarah-taylor-freelance-website"
+    : "";
+
 const Services = () => {
   return (
     <Section id="services" bg="green.9">
@@ -69,7 +74,7 @@ const Services = () => {
       </Container>
 
       <Center mt={50}>
-        <Button component="a" href="/contact">
+        <Button component="a" href={`${basePath}/contact`}>
           Get a custom quote
         </Button>
       </Center>

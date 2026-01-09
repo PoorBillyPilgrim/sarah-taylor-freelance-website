@@ -47,7 +47,7 @@ const About = () => {
                 color="green.9"
                 w={{ base: "inherit", sm: "fit-content" }}
                 component="a"
-                href="/contact"
+                href={`${basePath}/contact`}
               >
                 Let&apos;s dive in
               </Button>
