@@ -1,22 +1,18 @@
 import { Image, ImageProps } from "@mantine/core";
 import classes from "./Icon.module.css";
+import { getSrc } from "../../app/utils";
 
 interface IconProps extends ImageProps {
-  variant?: "default" | "about" | "help" | "services";
+  variant?: "default" | "about" | "help" | "services" | "quotes";
   src: string;
 }
-
-const basePath: string =
-  process.env.NEXT_PUBLIC_SITE_ENV === "staging"
-    ? "/sarah-taylor-freelance-website"
-    : "";
 
 const Icon = ({ src, variant = "default", ...other }: IconProps) => {
   return (
     <Image
       variant={variant}
       className={classes.icon}
-      src={`${basePath}${src}`}
+      src={getSrc(src)}
       alt=""
       {...other}
     />

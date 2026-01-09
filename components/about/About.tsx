@@ -14,11 +14,7 @@ import Section from "../section/Section";
 import SectionImage from "../images/SectionImage";
 import Button from "../buttons/Button";
 import Icon from "../images/Icon";
-
-const basePath: string =
-  process.env.NEXT_PUBLIC_SITE_ENV === "staging"
-    ? "/sarah-taylor-freelance-website"
-    : "";
+import { getSrc } from "../../app/utils";
 
 const About = () => {
   return (
@@ -27,6 +23,7 @@ const About = () => {
         <Container>
           <Flex
             direction={{ base: "column", md: "row-reverse" }}
+            gap={{ base: 0, sm: "xl" }}
             justify="space-between"
             align="center"
           >
@@ -45,9 +42,10 @@ const About = () => {
               </Text>
               <Button
                 color="green.9"
+                mt={{ base: 15, sm: 10 }}
                 w={{ base: "inherit", sm: "fit-content" }}
                 component="a"
-                href={`${basePath}/contact`}
+                href={getSrc("/contact")}
               >
                 Let&apos;s dive in
               </Button>
@@ -72,7 +70,7 @@ const About = () => {
                 pos="absolute"
                 bottom={20}
                 right={0}
-                src={`${basePath}/icons/squiggly_arrow.png`}
+                src={getSrc("/icons/squiggly_arrow.png")}
                 alt=""
               />
             </Grid.Col>
@@ -108,7 +106,8 @@ const About = () => {
                 </Text>
                 <Button
                   component="a"
-                  href="mailto:hello@sarahmtaylor.com"
+                  href={getSrc("/contact")}
+                  mt={{ base: 15, sm: 10 }}
                   w={{ base: "inherit", sm: "fit-content" }}
                 >
                   Let&apos;s chat

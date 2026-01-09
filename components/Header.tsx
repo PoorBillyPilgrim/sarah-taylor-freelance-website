@@ -5,15 +5,12 @@ import {
   Collapse,
   Container,
   Group,
+  Image,
   NavLink,
 } from "@mantine/core";
 import NavLinks, { Link } from "../components/NavLinks";
 import { useDisclosure, useFocusTrap, useMediaQuery } from "@mantine/hooks";
-
-const basePath: string =
-  process.env.NEXT_PUBLIC_SITE_ENV === "staging"
-    ? "/sarah-taylor-freelance-website"
-    : "";
+import { getSrc } from "../app/utils";
 
 const Header = () => {
   const isSm = useMediaQuery("(max-width: 48em)");
@@ -27,8 +24,14 @@ const Header = () => {
   return (
     <AppShell.Header withBorder px={{ base: 15, lg: 100 }}>
       <Container ref={focusTrapRef}>
-        <Group mih="var(--header-height)" justify="space-between">
-          <Link href="/">Sarah M. Taylor</Link>
+        <Group
+          mih="var(--header-height)"
+          justify="space-between"
+          align="center"
+        >
+          <Link href="/">
+            <Image w={200} alt="logo" src={getSrc("/images/logo.png")} />
+          </Link>
           <Burger hiddenFrom="sm" opened={opened} onClick={handlers.toggle} />
           <NavLinks visibleFrom="sm" />
         </Group>
@@ -36,22 +39,18 @@ const Header = () => {
           <NavLink
             onClick={handleClick}
             label="About"
-            href={`${basePath}/#about`}
+            href={getSrc("/#about")}
           />
           <NavLink
             onClick={handleClick}
             label="Services"
-            href={`${basePath}/#services`}
+            href={getSrc("/#services")}
           />
-          <NavLink
-            onClick={handleClick}
-            label="Work"
-            href={`${basePath}/#work`}
-          />
+          <NavLink onClick={handleClick} label="Work" href={getSrc("/#work")} />
           <NavLink
             onClick={handleClick}
             label="Contact"
-            href={`${basePath}/contact`}
+            href={getSrc("/contact")}
           />
         </Collapse>
       </Container>

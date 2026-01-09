@@ -10,6 +10,7 @@ import {
 } from "@mantine/core";
 import classes from "./Projects.module.css";
 import Link from "next/link";
+import { getSrc } from "../../app/utils";
 
 const projects = [
   {
@@ -63,11 +64,6 @@ const projects = [
   },
 ];
 
-const basePath: string =
-  process.env.NEXT_PUBLIC_SITE_ENV === "staging"
-    ? "/sarah-taylor-freelance-website"
-    : "";
-
 const Project = ({
   src,
   alt,
@@ -84,20 +80,27 @@ const Project = ({
   target?: string;
 }) => {
   return (
-    <UnstyledButton component={Link} href={href} target={target ?? "_self"}>
+    <UnstyledButton
+      component={Link}
+      href={href}
+      target={target ?? "_self"}
+      mt={{ base: "md", sm: 0 }}
+    >
       <Stack align="center">
         <Image
           className={classes.image}
           height="280px"
           width="280px"
-          src={`${basePath}${src}`}
+          src={getSrc(src)}
           alt={alt}
         />
 
         <Title order={3} c="orange.5">
           {title}
         </Title>
-        <Text c="white">{text}</Text>
+        <Text c="white" ta="center">
+          {text}
+        </Text>
       </Stack>
     </UnstyledButton>
   );

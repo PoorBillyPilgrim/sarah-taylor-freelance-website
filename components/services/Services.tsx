@@ -2,6 +2,7 @@ import { Center, Container, Grid, Stack, Text, Title } from "@mantine/core";
 import Section from "../section/Section";
 import Icon from "../images/Icon";
 import Button from "../buttons/Button";
+import { getSrc } from "../../app/utils";
 
 const cards = [
   {
@@ -34,7 +35,7 @@ const Card = ({
   text: string;
 }) => {
   return (
-    <Grid h={{ base: "auto", sm: 175 }}>
+    <Grid h={{ base: "auto", sm: 175 }} pt={{ base: 40 }}>
       <Grid.Col span={{ base: 12, sm: 2 }}>
         <Icon variant="services" src={icon} />
       </Grid.Col>
@@ -50,15 +51,10 @@ const Card = ({
   );
 };
 
-const basePath: string =
-  process.env.NEXT_PUBLIC_SITE_ENV === "staging"
-    ? "/sarah-taylor-freelance-website"
-    : "";
-
 const Services = () => {
   return (
     <Section id="services" bg="green.9">
-      <Title order={2} c="white" pb={{ base: 40 }}>
+      <Title order={2} c="white">
         Services
       </Title>
 
@@ -74,7 +70,7 @@ const Services = () => {
       </Container>
 
       <Center mt={50}>
-        <Button component="a" href={`${basePath}/contact`}>
+        <Button component="a" href={getSrc("/contact")}>
           Get a custom quote
         </Button>
       </Center>

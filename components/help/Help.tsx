@@ -7,34 +7,19 @@ const cards = [
     id: 1,
     icon: "/icons/find_your_edge.png",
     title: "Find your edge",
-    text: (
-      <Text>
-        Stand out in your industry with insight-rich content that inspires trust
-        and shows off your expertise.
-      </Text>
-    ),
+    text: "Stand out in your industry with insight-rich content that inspires trust and shows off your expertise.",
   },
   {
     id: 2,
     icon: "/icons/move_faster.png",
     title: "Move faster",
-    text: (
-      <Text>
-        Save time with a specialist that sticks the landing every time (no
-        in-house hiring or agency fees required).
-      </Text>
-    ),
+    text: "Save time with a specialist that sticks the landing every time (no in-house hiring or agency fees required).",
   },
   {
     id: 3,
     icon: "/icons/go_bigger.png",
     title: "Go bigger",
-    text: (
-      <Text>
-        Sell more and scale your business with crystal clear messaging that
-        attracts the right buyers.
-      </Text>
-    ),
+    text: "Sell more and scale your business with crystal clear messaging that attracts the right buyers.",
   },
 ];
 
@@ -48,10 +33,10 @@ const Card = ({
   title: string;
 }) => {
   return (
-    <Stack gap="md">
+    <Stack gap={0}>
       <Icon variant="help" src={icon} />
       <Title order={3}>{title}</Title>
-      {text}
+      <Text pt={{ base: "lg" }}>{text}</Text>
     </Stack>
   );
 };

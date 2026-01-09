@@ -16,6 +16,7 @@ export function Hero() {
           align="center"
         >
           <SectionImage
+            variant="xl"
             alt="Woman rock climbing"
             src="/images/hero.png"
             mt={{ base: 50 }}
@@ -27,7 +28,7 @@ export function Hero() {
               Copywriter for <em>adventurous</em> brands
             </Title>
             <Text c="white" mt="md">
-              Get noticed and grow your business wth action-igniting copy,
+              Get noticed and grow your business with action-igniting copy,
               cred-building content, and scale-ready strategy.
             </Text>
 

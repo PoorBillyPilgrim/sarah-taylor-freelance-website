@@ -29,13 +29,13 @@ const Quote = ({
   return (
     <Box component="section" bg={bg}>
       <Container size="md">
-        <Icon src="/icons/top_quote.png" />
+        <Icon variant="quotes" src="/icons/top_quote.png" />
         <Center>
           <Stack justify="center" align="center">
             <Text className={classes.quote} c={textColor}>
               {quote}
             </Text>
-            <Group>
+            <Group wrap="nowrap">
               <Avatar size="lg" src={avatar} alt={alt} />
               <Stack gap={0}>
                 <Text c={textColor} className={classes.author}>
@@ -49,7 +49,7 @@ const Quote = ({
           </Stack>
         </Center>
 
-        <Icon ml="auto" src="/icons/bottom_quote.png" />
+        <Icon variant="quotes" ml="auto" src="/icons/bottom_quote.png" />
       </Container>
     </Box>
   );

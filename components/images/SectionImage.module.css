@@ -19,6 +19,21 @@
     }
 
     @media (min-width: $mantine-breakpoint-lg) {
+      height: 500px;
+      width: 500px;
+    }
+  }
+
+  &[data-variant="xl"] {
+    width: 360px;
+    height: 360px;
+
+    @media (min-width: $mantine-breakpoint-sm) {
+      height: 450px;
+      width: 450px;
+    }
+
+    @media (min-width: $mantine-breakpoint-lg) {
       height: 600px;
       width: 600px;
     }

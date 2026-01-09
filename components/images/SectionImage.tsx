@@ -1,18 +1,14 @@
 import { Image, ImageProps } from "@mantine/core";
 import classes from "./SectionImage.module.css";
 import NextImage from "next/image";
+import { getSrc } from "../../app/utils";
 
-type Variant = "md" | "lg";
+type Variant = "md" | "lg" | "xl";
 interface SectionImageProps extends ImageProps {
   variant?: Variant;
   alt: string;
   src: string;
 }
-
-const basePath: string =
-  process.env.NEXT_PUBLIC_SITE_ENV === "staging"
-    ? "/sarah-taylor-freelance-website"
-    : "";
 
 const SectionImage = ({
   variant = "lg",
@@ -25,7 +21,7 @@ const SectionImage = ({
       variant={variant}
       className={classes.image}
       alt={alt}
-      src={`${basePath}${src}`}
+      src={getSrc(src)}
       {...otherProps}
       width={500}
       height={500}
