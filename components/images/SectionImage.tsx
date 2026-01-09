@@ -14,8 +14,6 @@ const basePath: string =
     ? "/sarah-taylor-freelance-website"
     : "";
 
-console.log("ENV: ", process.env.NEXT_PUBLIC_SITE_ENV);
-
 const SectionImage = ({
   variant = "lg",
   alt,
