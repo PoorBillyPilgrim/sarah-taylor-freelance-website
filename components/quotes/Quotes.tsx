@@ -19,7 +19,7 @@ const quotes = [
     quote:
       '"Sarah quickly learned our brand voice and became a trusted partner on donor communications, including impact report articles, fundraising appeals, and speeches. She had a real gift for interviewing staff and community members—asking thoughtful questions and turning those conversations into compelling, authentic content. Smart, fast, creative, and highly adaptable, she consistently delivered strong work."',
     author: "Marla Goldberg",
-    title: "Director of Annual Giving, Stroum Jewish Community Center",
+    title: "Director of Annual Giving, Stroum JCC",
   },
   // {
   //   id: 3,

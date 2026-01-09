@@ -31,14 +31,14 @@ const Quote = ({
       <Container size="md">
         <Icon variant="quotes" src="/icons/top_quote.png" />
         <Center>
-          <Stack justify="center" align="center">
+          <Stack justify="center" align="center" px={{ base: 60 }}>
             <Text className={classes.quote} c={textColor}>
               {quote}
             </Text>
             <Group wrap="nowrap">
               <Avatar size="lg" src={avatar} alt={alt} />
               <Stack gap={0}>
-                <Text c={textColor} className={classes.author}>
+                <Text c={textColor} fz="1.4rem" className={classes.author}>
                   {author}
                 </Text>
                 <Text c={textColor} className={classes.title}>
