@@ -63,6 +63,11 @@ const projects = [
   },
 ];
 
+const basePath: string =
+  process.env.NEXT_PUBLIC_SITE_ENV === "staging"
+    ? "/sarah-taylor-freelance-website"
+    : "";
+
 const Project = ({
   src,
   alt,
@@ -85,7 +90,7 @@ const Project = ({
           className={classes.image}
           height="280px"
           width="280px"
-          src={src}
+          src={`${basePath}${src}`}
           alt={alt}
         />
 

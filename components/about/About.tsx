@@ -15,6 +15,11 @@ import SectionImage from "../images/SectionImage";
 import Button from "../buttons/Button";
 import Icon from "../images/Icon";
 
+const basePath: string =
+  process.env.NEXT_PUBLIC_SITE_ENV === "staging"
+    ? "/sarah-taylor-freelance-website"
+    : "";
+
 const About = () => {
   return (
     <Fragment>
@@ -67,7 +72,7 @@ const About = () => {
                 pos="absolute"
                 bottom={20}
                 right={0}
-                src="/icons/squiggly_arrow.png"
+                src={`${basePath}/icons/squiggly_arrow.png`}
                 alt=""
               />
             </Grid.Col>

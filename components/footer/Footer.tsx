@@ -6,9 +6,9 @@ const data = [
   {
     title: "Explore",
     links: [
-      { label: "About", link: "#about" },
-      { label: "Services", link: "#services" },
-      { label: "Work", link: "#work" },
+      { label: "About", link: "/#about" },
+      { label: "Services", link: "/#services" },
+      { label: "Work", link: "/#work" },
     ],
   },
   {

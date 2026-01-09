@@ -9,6 +9,11 @@ interface SectionImageProps extends ImageProps {
   src: string;
 }
 
+const basePath: string =
+  process.env.NEXT_PUBLIC_SITE_ENV === "staging"
+    ? "/sarah-taylor-freelance-website"
+    : "";
+
 const SectionImage = ({
   variant = "lg",
   alt,
@@ -20,7 +25,7 @@ const SectionImage = ({
       variant={variant}
       className={classes.image}
       alt={alt}
-      src={src}
+      src={`${basePath}${src}`}
       {...otherProps}
       width={500}
       height={500}
