@@ -9,6 +9,7 @@ import {
 } from "@mantine/core";
 import classes from "./Quote.module.css";
 import Icon from "../images/Icon";
+import { getSrc } from "../../app/utils";
 
 const Quote = ({
   avatar,
@@ -18,7 +19,7 @@ const Quote = ({
   author,
   title,
 }: {
-  avatar?: string;
+  avatar: string;
   alt?: string;
   bg: string;
   quote: string;
@@ -36,7 +37,7 @@ const Quote = ({
               {quote}
             </Text>
             <Group wrap="nowrap">
-              <Avatar size="lg" src={avatar} alt={alt} />
+              <Avatar size="lg" src={getSrc(avatar)} alt={alt} />
               <Stack gap={0}>
                 <Text c={textColor} fz="1.4rem" className={classes.author}>
                   {author}
