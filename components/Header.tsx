@@ -10,6 +10,11 @@ import {
 import NavLinks, { Link } from "../components/NavLinks";
 import { useDisclosure, useFocusTrap, useMediaQuery } from "@mantine/hooks";
 
+const basePath: string =
+  process.env.NEXT_PUBLIC_SITE_ENV === "staging"
+    ? "/sarah-taylor-freelance-website"
+    : "";
+
 const Header = () => {
   const isSm = useMediaQuery("(max-width: 48em)");
   const [opened, handlers] = useDisclosure(false);
@@ -28,10 +33,26 @@ const Header = () => {
           <NavLinks visibleFrom="sm" />
         </Group>
         <Collapse in={opened} hiddenFrom="sm" pb={{ base: 20 }}>
-          <NavLink onClick={handleClick} label="About" href="/#about" />
-          <NavLink onClick={handleClick} label="Services" href="/#services" />
-          <NavLink onClick={handleClick} label="Work" href="/#work" />
-          <NavLink onClick={handleClick} label="Contact" href="/contact" />
+          <NavLink
+            onClick={handleClick}
+            label="About"
+            href={`${basePath}/#about`}
+          />
+          <NavLink
+            onClick={handleClick}
+            label="Services"
+            href={`${basePath}/#services`}
+          />
+          <NavLink
+            onClick={handleClick}
+            label="Work"
+            href={`${basePath}/#work`}
+          />
+          <NavLink
+            onClick={handleClick}
+            label="Contact"
+            href={`${basePath}/contact`}
+          />
         </Collapse>
       </Container>
     </AppShell.Header>
