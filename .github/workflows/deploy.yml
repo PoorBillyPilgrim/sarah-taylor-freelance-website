@@ -56,7 +56,9 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
 
       - name: Set environment
-        run: echo "SITE_ENV=staging" >> $GITHUB_ENV
+        run: |
+          echo "SITE_ENV=staging" >> $GITHUB_ENV
+          echo "NEXT_PUBLIC_SITE_ENV >> $GITHUB_ENV"
 
       - name: Build with Next.js
         run: npm run build
