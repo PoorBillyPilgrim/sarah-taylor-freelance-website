@@ -1,7 +1,9 @@
 import { Image, ImageProps } from "@mantine/core";
 import classes from "./SectionImage.module.css";
+import NextImage from "next/image";
+import { getSrc } from "../../app/utils";
 
-type Variant = "md" | "lg";
+type Variant = "md" | "lg" | "xl";
 interface SectionImageProps extends ImageProps {
   variant?: Variant;
   alt: string;
@@ -19,8 +21,11 @@ const SectionImage = ({
       variant={variant}
       className={classes.image}
       alt={alt}
-      src={src}
+      src={getSrc(src)}
       {...otherProps}
+      width={500}
+      height={500}
+      component={NextImage}
     />
   );
 };

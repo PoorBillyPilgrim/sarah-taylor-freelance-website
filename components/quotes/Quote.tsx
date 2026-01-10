@@ -9,6 +9,7 @@ import {
 } from "@mantine/core";
 import classes from "./Quote.module.css";
 import Icon from "../images/Icon";
+import { getSrc } from "../../app/utils";
 
 const Quote = ({
   avatar,
@@ -18,7 +19,7 @@ const Quote = ({
   author,
   title,
 }: {
-  avatar?: string;
+  avatar: string;
   alt?: string;
   bg: string;
   quote: string;
@@ -29,16 +30,16 @@ const Quote = ({
   return (
     <Box component="section" bg={bg}>
       <Container size="md">
-        <Icon src="/icons/top_quote.png" />
+        <Icon variant="quotes" src="/icons/top_quote.png" />
         <Center>
-          <Stack justify="center" align="center">
+          <Stack justify="center" align="center" px={{ base: 60 }}>
             <Text className={classes.quote} c={textColor}>
               {quote}
             </Text>
-            <Group>
-              <Avatar size="lg" src={avatar} alt={alt} />
+            <Group wrap="nowrap">
+              <Avatar size="lg" src={getSrc(avatar)} alt={alt} />
               <Stack gap={0}>
-                <Text c={textColor} className={classes.author}>
+                <Text c={textColor} fz="1.4rem" className={classes.author}>
                   {author}
                 </Text>
                 <Text c={textColor} className={classes.title}>
@@ -49,7 +50,7 @@ const Quote = ({
           </Stack>
         </Center>
 
-        <Icon ml="auto" src="/icons/bottom_quote.png" />
+        <Icon variant="quotes" ml="auto" src="/icons/bottom_quote.png" />
       </Container>
     </Box>
   );

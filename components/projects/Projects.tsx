@@ -10,6 +10,7 @@ import {
 } from "@mantine/core";
 import classes from "./Projects.module.css";
 import Link from "next/link";
+import { getSrc } from "../../app/utils";
 
 const projects = [
   {
@@ -79,20 +80,27 @@ const Project = ({
   target?: string;
 }) => {
   return (
-    <UnstyledButton component={Link} href={href} target={target ?? "_self"}>
+    <UnstyledButton
+      component={Link}
+      href={href}
+      target={target ?? "_self"}
+      mt={{ base: "md", sm: 0 }}
+    >
       <Stack align="center">
         <Image
           className={classes.image}
           height="280px"
           width="280px"
-          src={src}
+          src={getSrc(src)}
           alt={alt}
         />
 
         <Title order={3} c="orange.5">
           {title}
         </Title>
-        <Text c="white">{text}</Text>
+        <Text c="white" ta="center">
+          {text}
+        </Text>
       </Stack>
     </UnstyledButton>
   );

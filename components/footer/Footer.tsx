@@ -1,14 +1,15 @@
 "use client";
 import { AppShell, Container, Text } from "@mantine/core";
 import classes from "./Footer.module.css";
+import { Link } from "../NavLinks";
 
 const data = [
   {
     title: "Explore",
     links: [
-      { label: "About", link: "#about" },
-      { label: "Services", link: "#services" },
-      { label: "Work", link: "#work" },
+      { label: "About", link: "/#about" },
+      { label: "Services", link: "/#services" },
+      { label: "Work", link: "/#work" },
     ],
   },
   {
@@ -30,15 +31,15 @@ const data = [
 const Footer = () => {
   const groups = data.map(group => {
     const links = group.links.map((link, index) => (
-      <Text<"a">
+      <Link
         key={index}
         className={classes.link}
-        component="a"
+        c="white"
         href={link.link}
         target={link?.target ?? "_self"}
       >
         {link.label}
-      </Text>
+      </Link>
     ));
 
     return (

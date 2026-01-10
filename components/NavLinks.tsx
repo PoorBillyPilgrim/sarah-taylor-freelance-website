@@ -6,15 +6,20 @@ import {
   GroupProps,
 } from "@mantine/core";
 import { forwardRef } from "react";
+import NextLink from "next/link";
 
-interface LinkProps extends AnchorProps {
+interface LinkProps extends Omit<AnchorProps, "href"> {
+  href: string;
   children?: React.ReactNode;
 }
 
-const Link = createPolymorphicComponent<"a", LinkProps>(
-  forwardRef<HTMLAnchorElement, LinkProps>(function Link(props, ref) {
+export const Link = createPolymorphicComponent<"a", LinkProps>(
+  forwardRef<HTMLAnchorElement, LinkProps>(function Link(
+    { c = "black", ...props },
+    ref
+  ) {
     return (
-      <Anchor c="black" {...props} ref={ref}>
+      <Anchor component={NextLink} c={c} {...props} ref={ref}>
         {props.children}
       </Anchor>
     );
