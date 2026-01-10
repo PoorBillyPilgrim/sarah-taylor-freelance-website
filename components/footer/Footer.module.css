@@ -20,11 +20,9 @@
 
 .description {
   margin-top: 5px;
-  color: white;
 
   @media (max-width: $mantine-breakpoint-sm) {
     margin-top: var(--mantine-spacing-xs);
-    text-align: center;
   }
 }
 

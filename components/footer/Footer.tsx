@@ -1,7 +1,8 @@
 "use client";
-import { AppShell, Container, Text } from "@mantine/core";
+import { AppShell, Container, Image, Text } from "@mantine/core";
 import classes from "./Footer.module.css";
 import { Link } from "../NavLinks";
+import { getSrc } from "../../app/utils";
 
 const data = [
   {
@@ -58,9 +59,12 @@ const Footer = () => {
     >
       <Container className={classes.inner}>
         <div className={classes.logo}>
-          <Text size="xs" className={classes.description}>
-            Sarah M. Taylor
-          </Text>
+          <Image
+            className={classes.description}
+            w={200}
+            alt="logo"
+            src={getSrc("/images/logo_white.png")}
+          />
         </div>
         <div className={classes.groups}>{groups}</div>
       </Container>
