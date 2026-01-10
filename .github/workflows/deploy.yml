@@ -57,8 +57,8 @@ jobs:
 
       - name: Set environment
         run: |
-          echo "SITE_ENV=staging" >> $GITHUB_ENV
-          echo "NEXT_PUBLIC_SITE_ENV=staging" >> $GITHUB_ENV
+          echo "SITE_ENV=prod" >> $GITHUB_ENV
+          echo "NEXT_PUBLIC_SITE_ENV=prod" >> $GITHUB_ENV
 
       - name: Build with Next.js
         run: npm run build
