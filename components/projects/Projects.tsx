@@ -52,7 +52,7 @@ const projects = [
     href: "/press-release.pdf",
     alt: "laptop displaying an article",
     title: "Press Release",
-    text: "Georgia River Guide app launch announcement (X media hits)",
+    text: "Georgia River Guide app launch announcement",
   },
   {
     id: 6,
