@@ -20,12 +20,12 @@
     "@mantine/hooks": "8.3.10",
     "@mantine/notifications": "^8.3.10",
     "next": "^15.5.9",
-    "react": "19.1.1",
+    "react": "19.2.4",
     "react-dom": "19.1.1"
   },
   "devDependencies": {
     "@types/node": "24.3.3",
-    "@types/react": "19.1.13",
+    "@types/react": "19.2.10",
     "@types/react-dom": "19.1.9",
     "@typescript-eslint/eslint-plugin": "^8.50.1",
     "@typescript-eslint/parser": "^8.50.1",
