@@ -1,6 +1,5 @@
 import {
   Avatar,
-  Box,
   Center,
   Container,
   Group,
@@ -28,31 +27,39 @@ const Quote = ({
 }) => {
   const textColor = bg === "green.9" ? "white" : "black";
   return (
-    <Box component="section" bg={bg}>
-      <Container size="md">
+    <Container size="lg" bg={bg} h="100%">
+      <Stack justify="center" h="100%">
         <Icon variant="quotes" src="/icons/top_quote.png" />
-        <Center>
-          <Stack justify="center" align="center" px={{ base: 60 }}>
-            <Text className={classes.quote} c={textColor}>
-              {quote}
-            </Text>
-            <Group wrap="nowrap">
-              <Avatar size="lg" src={getSrc(avatar)} alt={alt} />
-              <Stack gap={0}>
-                <Text c={textColor} fz="1.4rem" className={classes.author}>
-                  {author}
-                </Text>
-                <Text c={textColor} className={classes.title}>
-                  {title}
-                </Text>
-              </Stack>
-            </Group>
-          </Stack>
-        </Center>
 
-        <Icon variant="quotes" ml="auto" src="/icons/bottom_quote.png" />
-      </Container>
-    </Box>
+        <Container size="md" flex={1}>
+          <Center h={"100%"}>
+            <Stack justify="center" align="center" px={{ base: 16, sm: 32, md: 60 }}>
+              <Text className={classes.quote} c={textColor}>
+                {quote}
+              </Text>
+              <Group>
+                <Avatar size="lg" src={getSrc(avatar)} alt={alt} />
+                <Stack gap={0}>
+                  <Text c={textColor} className={classes.author}>
+                    {author}
+                  </Text>
+                  <Text c={textColor} className={classes.title}>
+                    {title}
+                  </Text>
+                </Stack>
+              </Group>
+            </Stack>
+          </Center>
+        </Container>
+
+        <Icon
+          variant="quotes"
+          ml="auto"
+          mt="auto"
+          src="/icons/bottom_quote.png"
+        />
+      </Stack>
+    </Container>
   );
 };
 

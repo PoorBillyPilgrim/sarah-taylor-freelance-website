@@ -1,0 +1,8 @@
+.control {
+  background-color: var(--mantine-color-orange-5);
+  color: white;
+}
+
+.indicator {
+  background-color: var(--mantine-color-orange-5);
+}
