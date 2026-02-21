@@ -1,7 +1,11 @@
 import "@testing-library/jest-dom";
 import { vi } from "vitest";
 
-// jsdom doesn't implement window.matchMedia; Mantine requires it
+// jsdom doesn't implement window.matchMedia, but Mantine reads it at render time
+// to handle responsive styles and color scheme detection. Without this stub,
+// any test that mounts a Mantine component will throw before assertions run.
+// The mock always returns `matches: false` (no media query matches) and
+// no-ops all listener methods since we don't need real responsive behavior in tests.
 Object.defineProperty(window, "matchMedia", {
   writable: true,
   value: vi.fn().mockImplementation((query: string) => ({
@@ -16,6 +20,8 @@ Object.defineProperty(window, "matchMedia", {
   })),
 });
 
+// Preemptive mock — no component currently calls useRouter/usePathname, but
+// this prevents crashes if any future component imports next/navigation hooks.
 vi.mock("next/navigation", () => ({
   useRouter: vi.fn(() => ({
     push: vi.fn(),
@@ -26,6 +32,8 @@ vi.mock("next/navigation", () => ({
   useSearchParams: vi.fn(() => new URLSearchParams()),
 }));
 
+// Replace Next.js <Link> with a plain <a> tag so tests can inspect href and
+// other attributes without needing a full Next.js router context.
 vi.mock("next/link", () => ({
   default: (props: {
     children?: unknown;
