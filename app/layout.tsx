@@ -1,6 +1,7 @@
 import React from "react";
 import "@mantine/core/styles.layer.css";
 import "@mantine/notifications/styles.layer.css";
+import "@mantine/carousel/styles.layer.css";
 import "./global.css";
 
 import {
