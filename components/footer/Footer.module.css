@@ -60,8 +60,7 @@
 
 .title {
   font-size: var(--mantine-font-size-lg);
-  font-weight: 500;
-  font-family: "Mont-Heavy";
+  font-weight: 800;
   margin-bottom: calc(var(--mantine-spacing-xs) / 2);
   color: white;
 }
