@@ -14,25 +14,8 @@
 * HEADINGS
 */
 
-@font-face {
-  font-family: "Mont-Bold";
-  src: url("../public/fonts/mont-bold.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Mont-Light";
-  src: url("../public/fonts/mont-light.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Mont-Heavy";
-  src: url("../public/fonts/mont-heavy.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
+body {
+  font-weight: 300;
 }
 
 section {

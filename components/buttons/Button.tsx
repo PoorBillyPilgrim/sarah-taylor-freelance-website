@@ -7,29 +7,29 @@ import {
 import classes from "./Button.module.css";
 
 const Button = createPolymorphicComponent<"button", MantineButtonProps>(
-  forwardRef<HTMLButtonElement, MantineButtonProps>(function Button(
-    props,
-    ref
-  ) {
-    return (
-      <MantineButton
-        ref={ref}
-        className={classes.button}
-        fz="var(--mantine-font-size-lg)"
-        size="md"
-        radius="md"
-        py={10}
-        styles={{
-          label: {
-            overflow: "visible",
-          },
-        }}
-        {...props}
-      >
-        {props.children}
-      </MantineButton>
-    );
-  })
+  forwardRef<HTMLButtonElement, MantineButtonProps>(
+    function Button(props, ref) {
+      return (
+        <MantineButton
+          ref={ref}
+          className={classes.button}
+          fz="var(--mantine-font-size-lg)"
+          fw={400}
+          size="md"
+          radius="md"
+          py={10}
+          styles={{
+            label: {
+              overflow: "visible",
+            },
+          }}
+          {...props}
+        >
+          {props.children}
+        </MantineButton>
+      );
+    },
+  ),
 );
 
 export default Button;

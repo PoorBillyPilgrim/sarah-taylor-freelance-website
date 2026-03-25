@@ -9,9 +9,10 @@ import {
 
 export const theme = createTheme({
   /* TYPOGRAPHY */
-  fontFamily: "Mont-Light",
+  fontFamily: "var(--font-montserrat), sans-serif",
   headings: {
-    fontFamily: "Mont-Heavy",
+    fontFamily: "var(--font-montserrat), sans-serif",
+    fontWeight: "800",
   },
 
   /** COLORS */
@@ -68,7 +69,7 @@ export const theme = createTheme({
       styles: {
         root: {
           fontSize: "1.2rem",
-          fontWeight: 600,
+          fontWeight: 300,
         },
       },
     }),

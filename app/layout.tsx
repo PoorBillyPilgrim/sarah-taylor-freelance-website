@@ -9,9 +9,16 @@ import {
   mantineHtmlProps,
   MantineProvider,
 } from "@mantine/core";
+import { Montserrat } from "next/font/google";
 import { resolver, theme } from "../theme";
 import AppLayout from "../components/AppLayout";
 import { Notifications } from "@mantine/notifications";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+  display: "swap",
+});
 
 export const metadata = {
   title: "Sarah M. Taylor",
@@ -20,7 +27,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: any }) {
   return (
-    <html lang="en" {...mantineHtmlProps}>
+    <html lang="en" {...mantineHtmlProps} className={montserrat.variable}>
       <head>
         <ColorSchemeScript />
         <link rel="shortcut icon" href="/favicon.svg" />
