@@ -16,14 +16,14 @@ interface LinkProps extends Omit<AnchorProps, "href"> {
 export const Link = createPolymorphicComponent<"a", LinkProps>(
   forwardRef<HTMLAnchorElement, LinkProps>(function Link(
     { c = "black", ...props },
-    ref
+    ref,
   ) {
     return (
       <Anchor component={NextLink} c={c} {...props} ref={ref}>
         {props.children}
       </Anchor>
     );
-  })
+  }),
 );
 
 const NavLinks = (props: GroupProps) => {
@@ -32,7 +32,7 @@ const NavLinks = (props: GroupProps) => {
       <Link href="/#services">Services</Link>
       <Link href="/#work">Work</Link>
       <Link href="/#about">About</Link>
-      <Link href="/contact">
+      <Link href="/contact" fw={400}>
         <strong>Contact</strong>
       </Link>
     </Group>
